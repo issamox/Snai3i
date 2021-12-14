@@ -13,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[\App\Http\Controllers\Front\FrontController::class,'index']);
+Route::get('/metier/{slug}/{city?}',[\App\Http\Controllers\Front\FrontController::class,'jobs']);
+Route::get('/profile/{user}-{slug}',[\App\Http\Controllers\Front\ArtisanController::class,'show']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+Route::resource('admin/jobs', \App\Http\Controllers\Admin\JobController::class);

@@ -2,6 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\City;
+use App\Models\Job;
+use App\Models\Review;
+use App\Models\Service;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,6 +18,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Job::factory(14)->create();
+        City::factory(8)->create();
+        Service::factory(200)->create();
+        User::factory(500)->create();
+        Review::factory(5000)->create();
+
+        $services = Service::all();
+        User::all()->each(function ($user) use ($services) {
+            $user->services()->attach(
+                $services->random(rand(1, 15))->pluck('id')->toArray()
+            );
+        });
     }
 }
