@@ -24,3 +24,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::resource('admin/jobs', \App\Http\Controllers\Admin\JobController::class);
+Route::resource('admin/services', \App\Http\Controllers\Admin\ServiceController::class);
