@@ -17,7 +17,7 @@ class ReviewFactory extends Factory
         return [
             'content'   => $this->faker->paragraph(),
             'stars'     => rand(1,5),
-            'user_id'   => User::all()->random(),
+            'user_id'   => User::all()->random(), // User::factory() to tested later
             'author_id' => User::all()->random(),
         ];
     }

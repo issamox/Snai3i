@@ -21,6 +21,10 @@
 <script src="{{ asset('admin/files/assets/js/vartical-layout.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/files/assets/pages/dashboard/custom-dashboard.js') }}"></script>
 <script src="{{ asset('admin/files/assets/js/sweetalert2.min.js') }}"></script>
+<!-- j-pro js -->
+{{--<script type="text/javascript" src="{{ asset('admin/files/assets/pages/j-pro/js/jquery.ui.min.js') }}"></script>--}}
+<script type="text/javascript" src="{{ asset('admin/files/assets/pages/j-pro/js/jquery.maskedinput.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('admin/files/assets/pages/j-pro/js/jquery.j-pro.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/files/assets/js/script.min.js') }}"></script>
 <script>
     $(document).ready(function() {
@@ -53,7 +57,7 @@
                 confirmButtonText: 'Oui'
             }).then((result) => {
                 if (result.value) {
-                    $(".delete_form_btn").click();
+                   $(this).next().find(".delete_form_btn").click();
                 }
             });
         });

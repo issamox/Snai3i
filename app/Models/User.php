@@ -54,6 +54,9 @@ class User extends Authenticatable
     public function reviews(){
         return $this->hasMany(Review::class,'author_id');
     }
+    public function realisations(){
+        return $this->hasMany(Realisation::class);
+    }
 
     public function path()
     {

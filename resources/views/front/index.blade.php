@@ -46,11 +46,8 @@
     <section class="services-w3l-block py-5" id="features">
         <div class="container py-md-5 py-4 HomePageFeatures">
             <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
-                <p class="text-uppercase">
-                    Best Features</p>
-                <h3 class="title-style">
-                    Achieve Your Goals With Edu School
-                </h3>
+                <p class="text-uppercase">LISTE DES MÉTIERS</p>
+                <h3 class="title-style">Découvrez nos annonces par catégorie</h3>
             </div>
 
             <div class="row justify-content-center">
@@ -59,7 +56,7 @@
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mt-2">
                         <div class="icon-box w-100 icon-box-clr-1">
                             <div class="icon">
-                                <img src="{{ asset('images/Plomberie.png') }}" alt="">
+                                <img src="{{ $job->image ? asset("uploads/Admin/Jobs/$job->image") : asset('images/Plomberie.png') }}" alt="">
                             </div>
                             <h4 class="title"><a href='{{ url("/metier/$job->slug") }}'>{{ $job->name }}</a></h4>
                         </div>
@@ -187,10 +184,8 @@
         <div class="container pb-md-5 pb-4 HomePageStats">
 
             <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
-                <p class="text-uppercase">
-                    Our Statistics</p>
-                <h3 class="title-style">
-                    We are Proud to Share with You            </h3>
+                <p class="text-uppercase">Nos statistiques</p>
+                <h3 class="title-style">Nous sommes fiers de partager avec vous</h3>
             </div>
 
             <div class="row text-center pt-4 justify-content-center">
@@ -257,54 +252,28 @@
             <div class="content-slider text-center">
                 <div class="clients-slider">
                     <div class="mask">
-
                         <ul>
-
                             <li class="anim1">
                                 <img src="images/images-testi1.jpg" class="img-fluid rounded-circle" alt="client image">
                                 <blockquote class="quote">
-                                    <q>Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.                                </q> </blockquote>
-                                <div class="source">-
-                                    Mario Spe                            </div>
+                                    <q>Très bon service, Artisan professionnel, honnête et le rapport qualité prix rien à dire. Artisan à l'écoute, très correcte et compétent. Merci à vous Mr et à Bricall </q>
+                                </blockquote>
+                                <div class="source">- Electroménager </div>
                             </li>
-
                             <li class="anim2">
                                 <img src="images/images-testi2.jpg" class="img-fluid rounded-circle" alt="client image">
-                                <blockquote class="quote"><q>Sed ut perspiciatis unde omnis iste natus error sit
-                                        voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-                                        illo inventore.                                </q> </blockquote>
-                                <div class="source">-
-                                    Petey Cru                            </div>
+                                <blockquote class="quote">
+                                    <q>Mr Amhar a été d'une aide tellement précieuse que je le recommande à toutes personnes. Il est d'une compétence irréprochable et d'une gentillesse sans précédent!</q>
+                                </blockquote>
+                                <div class="source">-  Plombier </div>
                             </li>
-
                             <li class="anim3">
                                 <img src="images/images-testi3.jpg" class="img-fluid rounded-circle " alt="client image">
-                                <blockquote class="quote"><q>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation.                                </q> </blockquote>
-                                <div class="source">-
-                                    Anna Sth                            </div>
-                            </li>
-
-                            <li class="anim4">
-                                <img src="images/images-testi1.jpg" class="img-fluid rounded-circle" alt="client image">
                                 <blockquote class="quote">
-                                    <q>Duis aute irure dolor in reprehenderit in voluptate
-                                        velit esse cillum dolore eu. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.                                </q> </blockquote>
-                                <div class="source">-
-                                    Gail For                            </div>
+                                    <q>Vraiment un travail professionnel et sérieux, bien précis et pointilleux dans ses œuvres et toujours dans les temps, vraiment rien à dire, très content de son travail. Bravo.</q>
+                                </blockquote>
+                                <div class="source">- Électricien </div>
                             </li>
-
-                            <li class="anim5">
-                                <img src="images/images-testi2.jpg" class="img-fluid rounded-circle" alt="client image">
-                                <blockquote class="quote"><q>Lorem ipsum dolor sit amet, consectetur adipiscing
-                                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation.                                </q> </blockquote>
-                                <div class="source">-
-                                    Boye Fra                            </div>
-                            </li>
-
                         </ul>
                     </div>
                 </div>
@@ -316,150 +285,6 @@
     </section>
 
     <!-- //HomePage Testimonials -->
-
-
-    <!-- Homepage Blog grids -->
-
-    <section>
-    </section>
-
-
-    <div class="w3l-blog-block-5 py-5" id="blog">
-        <div class="container py-md-5 py-4 HomePageBlog">
-
-            <div class="title-main text-center mx-auto mb-4" style="max-width:500px;">
-                <p class="text-uppercase">
-                    Our News</p>
-                <h3 class="title-style">
-                    Latest Blog Posts            </h3>
-            </div>
-
-
-            <div class="row justify-content-center">
-
-
-                <div class="col-lg-4 col-md-6 mt-4">
-                    <div class="blog-card-single">
-                        <div class="grids5-info">
-
-                            <a href="hello-world.html">
-
-                                <div class="post-thumbnail">
-                                    <img width="640" height="426" src="images/11-blog2.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://wp.w3layouts.com/eduschool/wp-content/uploads/sites/60/2021/11/blog2.jpg 640w, https://wp.w3layouts.com/eduschool/wp-content/uploads/sites/60/2021/11/blog2-300x200.jpg 300w, https://wp.w3layouts.com/eduschool/wp-content/uploads/sites/60/2021/11/blog2-360x240.jpg 360w" sizes="(max-width: 640px) 100vw, 640px">			</div><!-- .post-thumbnail -->
-
-                            </a>
-
-                            <div class="blog-info">
-
-                                <h4><a href="hello-world.html">Hello world!</a></h4>
-
-                                <!-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, sunt inc
-                                    officia deserunt.</p> -->
-
-                                <div class="d-flex align-items-center justify-content-between mt-4">
-
-                                    <div class="blogpost-author d-flex align-items-center">
-                                        <a class="d-flex align-items-center" href="w3layouts.html" title="23k followers">
-                                            <img class="img-fluid" src="images/avatar-328cc1f23e4a3b73aa60ee6ced1897a1" alt="W3Layouts" style="max-width:40px"> <span class="small ms-2"> <a class="url fn n" href="w3layouts.html">W3Layouts</a></span>
-                                        </a>
-                                    </div>
-
-                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>December 1, 2021</p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6 mt-4">
-                    <div class="blog-card-single">
-                        <div class="grids5-info">
-
-                            <a href="knowledge-based-programs-from-children.html">
-
-                                <div class="post-thumbnail">
-                                    <img width="640" height="426" src="images/11-blog3.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://wp.w3layouts.com/eduschool/wp-content/uploads/sites/60/2021/11/blog3.jpg 640w, https://wp.w3layouts.com/eduschool/wp-content/uploads/sites/60/2021/11/blog3-300x200.jpg 300w, https://wp.w3layouts.com/eduschool/wp-content/uploads/sites/60/2021/11/blog3-360x240.jpg 360w" sizes="(max-width: 640px) 100vw, 640px">			</div><!-- .post-thumbnail -->
-
-                            </a>
-
-                            <div class="blog-info">
-
-                                <h4><a href="knowledge-based-programs-from-children.html">Knowledge-based programs from children</a></h4>
-
-                                <!-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, sunt inc
-                                    officia deserunt.</p> -->
-
-                                <div class="d-flex align-items-center justify-content-between mt-4">
-
-                                    <div class="blogpost-author d-flex align-items-center">
-                                        <a class="d-flex align-items-center" href="w3layouts.html" title="23k followers">
-                                            <img class="img-fluid" src="images/avatar-328cc1f23e4a3b73aa60ee6ced1897a1" alt="W3Layouts" style="max-width:40px"> <span class="small ms-2"> <a class="url fn n" href="w3layouts.html">W3Layouts</a></span>
-                                        </a>
-                                    </div>
-
-                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>November 11, 2021</p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-4 col-md-6 mt-4">
-                    <div class="blog-card-single">
-                        <div class="grids5-info">
-
-                            <a href="strategic-social-media-evolution-of-visual.html">
-
-                                <div class="post-thumbnail">
-                                    <img width="640" height="426" src="images/11-blog1.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://wp.w3layouts.com/eduschool/wp-content/uploads/sites/60/2021/11/blog1.jpg 640w, https://wp.w3layouts.com/eduschool/wp-content/uploads/sites/60/2021/11/blog1-300x200.jpg 300w, https://wp.w3layouts.com/eduschool/wp-content/uploads/sites/60/2021/11/blog1-360x240.jpg 360w" sizes="(max-width: 640px) 100vw, 640px">			</div><!-- .post-thumbnail -->
-
-                            </a>
-
-                            <div class="blog-info">
-
-                                <h4><a href="strategic-social-media-evolution-of-visual.html">Strategic Social Media &amp; Evolution of Visual</a></h4>
-
-                                <!-- <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, sunt inc
-                                    officia deserunt.</p> -->
-
-                                <div class="d-flex align-items-center justify-content-between mt-4">
-
-                                    <div class="blogpost-author d-flex align-items-center">
-                                        <a class="d-flex align-items-center" href="w3layouts.html" title="23k followers">
-                                            <img class="img-fluid" src="images/avatar-328cc1f23e4a3b73aa60ee6ced1897a1" alt="W3Layouts" style="max-width:40px"> <span class="small ms-2"> <a class="url fn n" href="w3layouts.html">W3Layouts</a></span>
-                                        </a>
-                                    </div>
-
-                                    <p class="date-text"><i class="far fa-calendar-alt me-1"></i>November 11, 2021</p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-            </div>
-        </div>
-    </div>
-
-    <section>
-    </section>
-
-    <!-- //Homepage Blog grids -->
-
 
 
     <!-- HomePage Join Number -->

@@ -25,7 +25,7 @@ class JobController extends Controller
 
         $this->validate($request,[
             'name'           => 'unique:jobs|required',
-            'image'          => 'required' // max 10000kb , mimes:jpeg,jpg,png|max:500
+            'image'          => 'required|image|mimes:jpg,png,jpeg,svg|max:512|dimensions:min_width=100,min_height=100,max_width=512,max_height=512',
 
         ]);
 
@@ -51,17 +51,19 @@ class JobController extends Controller
 
         $this->validate($request,[
             'name'           => 'required|unique:jobs,name,'.$job->id,
-            'image'          => 'required' // max 10000kb , mimes:jpeg,jpg,png|max:500
+            'image'          => 'nullable|image|mimes:jpg,png,jpeg,svg|max:512|dimensions:min_width=100,min_height=100,max_width=512,max_height=512',
 
         ]);
 
         if ($request->hasFile("image")){
             $request->file("image")->move($this->upload_path,time().$request->file("image")->getClientOriginalName());
         }
-        
+
         $job->name  = $request->name;
         $job->slug  = Str::slug( $request->name );
-        $job->image = time().$request->file("image")->getClientOriginalName();
+        if ($request->hasFile("image")) {
+            $job->image = time() . $request->file("image")->getClientOriginalName();
+        }
         $job->save();
 
         return redirect()->to(route('jobs.index'))->with('success','Modification effectué avec succès');

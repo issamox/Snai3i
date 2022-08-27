@@ -64,9 +64,7 @@
             </div>
 
             <!-- copyright -->
-            <p class="copy-footer-29 text-center pt-lg-2 mt-5 pb-2 CopyRights">&copy; 2021                Edu School.                All Rights Reserved |
-                WordPress Theme by                <a href="https://w3layouts.com/">
-                    W3Layouts.                </a>
+            <p class="copy-footer-29 text-center pt-lg-2 mt-5 pb-2 CopyRights">&copy; 2022  Snay3i. All Rights Reserved | <a href="#"> Issam. </a>
             </p>
             <!-- //copyright -->
 

@@ -11,11 +11,7 @@
         </style>
         <div class="w3l-breadcrumb py-lg-5">
             <div class="container BlogSinglePageBanner">
-                <h4 class="inner-text-title font-weight-bold pt-5">
-                    Blog Single</h4>
-
-                <ul class="breadcrumbs-custom-path AllBreadcrumbs">
-                    <a href="eduschool.html" rel="nofollow">Home</a>&nbsp;&nbsp;&raquo;&nbsp;&nbsp;<a href="education.html" rel="category tag">Education</a> &bull; <a href="teaching.html" rel="category tag">Teaching</a> &nbsp;&nbsp;&raquo;&nbsp;&nbsp; Knowledge-based programs from children      </ul>
+                <h4 class="inner-text-title font-weight-bold pt-5"> Profil de {{ $user->name }}</h4>
             </div>
         </div>
     </section>
@@ -71,17 +67,13 @@
                                     <hr>
                                     <h3 class="text-center my-2 text-wh">Mes réalisations</h3>
                                     <div class="my-slider">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive">
+                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
+                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
+                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
+                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
+                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
+                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
+                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
                                     </div>
                                     <hr>
                                     <h3 class="text-center my-2 text-bl">Avis reçus pour MBAREK Edlimi</h3>

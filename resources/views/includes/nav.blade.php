@@ -13,7 +13,8 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul id="menu-main-menu" class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll "><li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item nav-item nav-item-22"><a href="eduschool.html" class="nav-link active">Home</a></li>
+            <ul id="menu-main-menu" class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll ">
+                <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item nav-item nav-item-22"><a href="/" class="nav-link active">Accueil</a></li>
                 <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-23"><a href="about-page.html" class="nav-link ">About</a></li>
                 <li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-28"><a href="blog-page.html" class="nav-link ">Blog Page</a></li>
                 <li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-24"><a href="pages.html" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>

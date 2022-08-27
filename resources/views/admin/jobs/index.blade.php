@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="page-body">
-            <div class="row users-card">
+            <div class="row users-card jobs-admin-container">
                 @foreach( $jobs as $key => $job )
                  <div class="col-lg-6 col-xl-3 col-md-6">
                     <div class="card rounded-card user-card">

@@ -17,8 +17,8 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->mediumText('content');
             $table->integer('stars');
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('author_id')->constrained('users');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('author_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }

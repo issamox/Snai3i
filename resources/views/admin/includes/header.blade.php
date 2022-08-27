@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Adminty - Premium Admin Template by Colorlib </title>
     <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,12 +26,17 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/files/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- feather Awesome -->
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/files/assets/icon/feather/css/feather.css') }}">
+    <!-- jpro forms css -->
+    {{--<link rel="stylesheet" type="text/css" href="../files/assets/pages/j-pro/css/font-awesome.min.css">--}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/files/assets/pages/j-pro/css/j-pro-modern.css') }}">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/files/assets/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/files/assets/css/custom-style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/files/assets/css/jquery.mCustomScrollbar.css') }}">
 
     <link href="{{ asset('admin/files/assets/css/jquery.filer.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ asset('admin/files/assets/css/themes/jquery.filer-dragdropbox-theme.css') }}" type="text/css" rel="stylesheet" />
+    @yield('styles')
 </head>
 <body>
 <!-- Pre-loader start -->

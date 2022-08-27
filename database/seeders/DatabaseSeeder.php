@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
     {
         Job::factory(14)->create();
         City::factory(8)->create();
-        Service::factory(200)->create();
-        User::factory(500)->create();
-        Review::factory(5000)->create();
+        Service::factory(50)->create();
+        User::factory(20)->create();
+        Review::factory(100)->create();
 
         $services = Service::all();
         User::all()->each(function ($user) use ($services) {

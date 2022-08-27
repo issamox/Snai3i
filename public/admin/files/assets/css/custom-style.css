@@ -1,0 +1,16 @@
+.jobs-admin-container .img-hover img{
+    height: 120px;
+}
+.user-widget-card .more-info{
+    left: calc(50% - 100px);
+    padding: 2px;
+    border-radius: unset;
+    bottom: -20px;
+}
+.image-action {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid #f6f7fb;
+}

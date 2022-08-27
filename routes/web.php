@@ -26,3 +26,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('admin/jobs', \App\Http\Controllers\Admin\JobController::class);
 Route::resource('admin/services', \App\Http\Controllers\Admin\ServiceController::class);
 Route::resource('admin/cities', \App\Http\Controllers\Admin\CityController::class);
+Route::resource('admin/users', \App\Http\Controllers\Admin\UserController::class);
+Route::resource('admin/realisations', \App\Http\Controllers\Admin\RealisationController::class);
