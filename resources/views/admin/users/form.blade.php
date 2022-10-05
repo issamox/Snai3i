@@ -98,10 +98,72 @@
         <label class="col-form-label" for="password_confirmation">Confirmer le mot de passe:</label>
         <input name="password_confirmation" id="password_confirmation" type="password" class="form-control form-control-lg" value="{{ old('password') ?? $user->password_decrypted }}">
     </div>
+    <div class="col-sm-12">
+        <label class="col-form-label" for="services">Mes services</label>
+        <table class="table table-responsive multiple-rows bg-inverse my-2">
+            <thead>
+                <tr>
+                    <th style="width: 100%">List de mes services</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            @if( old('services') != null)
+                @foreach( old('services') as $key => $value )
+                    <tr>
+                        <td>
+                            <div class="form-group {{ $errors->has("services.$key") ? 'alert-danger' : '' }}">
+                                <input type="text" name="services[]" class="form-control" value="{{ old("services.$key")}}">
+                            </div>
+                        </td>
+                        <td class="delete_row">
+                            <i class="btn btn-danger feather icon-trash"></i>
+                        </td>
+                    </tr>
+                @endforeach
+            @elseif(  $user->services && count($user->services) > 0   )
+                @foreach( $user->services as $key => $item )
+                    @if($item->name != "")
+                        <tr>
+                            <td>
+                                <div class="form-group {{ $errors->has("services.$key") ? 'alert-danger' : '' }}">
+                                    <input type="text" name="services[]" class="form-control" value="{{ $item->name  }}">
+                                    <input type="hidden" name="service_id[]" class="form-control" value="{{ $item->id  }}">
+                                </div>
+                            </td>
+                            <td class="deleteService">
+                                <i class="btn btn-danger feather icon-trash" data-id="{{ $item->id }}"></i>
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
+            @else
+                <tr>
+                    <td>
+                        <div class="form-group {{ $errors->has("services.0") ? 'alert-danger' : '' }}">
+                            <input type="text" name="services[]" class="form-control">
+                        </div>
+                    </td>
+                    <td class="delete_row">
+                        <i class="btn btn-danger feather icon-trash"></i>
+                    </td>
+                </tr>
+            @endif
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="2">
+                    <a href="#" class="add_new_row color-code"> <i class="fa fa-plus"></i> Ajouter Service</a>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
     <hr>
     <div class="col-sm-12 my-2">
-        <label class="col-form-label" for="type">Les réalisations</label>
-        <input type="file" multiple name="realisations[]" class="form-control form-control-lg">
+        <label class="col-form-label" for="realisations">Les réalisations</label>
+        <input type="file" multiple name="realisations[]" class="form-control form-control-lg" id="realisations">
     </div>
     @if( count($user->realisations) )
         <div class="col-sm-12">

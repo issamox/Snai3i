@@ -17,6 +17,7 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('name',250);
             $table->string('slug',250);
+            $table->foreignId("user_id")->constrained();
             $table->timestamps();
         });
     }

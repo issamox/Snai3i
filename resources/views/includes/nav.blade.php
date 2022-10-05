@@ -14,17 +14,13 @@
 
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul id="menu-main-menu" class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll ">
-                <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item nav-item nav-item-22"><a href="/" class="nav-link active">Accueil</a></li>
-                <li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-23"><a href="about-page.html" class="nav-link ">About</a></li>
-                <li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-28"><a href="blog-page.html" class="nav-link ">Blog Page</a></li>
-                <li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown nav-item nav-item-24"><a href="pages.html" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                    <ul class="dropdown-menu  depth_0">
-                        <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-25"><a href="404-page.html" class="dropdown-item ">404 page</a></li>
-                        <li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-26"><a href="elements-page.html" class="dropdown-item ">Elements page</a></li>
-                        <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-33"><a href="single-landing-page.html" class="dropdown-item ">Landing page</a></li>
-                    </ul>
-                </li>
-                <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page nav-item nav-item-27"><a href="contact-page.html" class="nav-link ">Contact</a></li>
+                <li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-8 current_page_item nav-item"><a href="/" class="nav-link active">Accueil</a></li>
+                <li  class="menu-item menu-item-type-post_type menu-item-object-page nav-item"><a href="{{ route('front.signup') }}" class="nav-link ">Inscription</a></li>
+                @if (Auth::check())
+                   <li  class="menu-item menu-item-type-post_type menu-item-object-page nav-item "><a href="{{ route('front.account') }}" class="nav-link ">Mon compte</a></li>
+                @else
+                    <li  class="menu-item menu-item-type-post_type menu-item-object-page nav-item "><a href="{{ route('front.login') }}" class="nav-link ">Connexion</a></li>
+                @endif
             </ul>
 
             <!-- search-right -->

@@ -62,6 +62,22 @@
             });
         });
 
+        /* Add new row */
+        $(".add_new_row").on("click", function (e) {
+            e.preventDefault();
+
+
+            $("table.multiple-rows tbody").append('' +
+                '<tr>' +
+                '<td><input type="text" name="services[]" class="form-control"> </td>\n' +
+                '<td class="delete_row"> <i class="btn btn-danger feather icon-trash"></i> </td>\n' +
+                '</tr>');
+        });
+
+        $(document).on("click",".delete_row i",function () {
+            $(this).parent().parent().empty(300);
+        });
+
     });
 </script>
 <center><font size="2">This is the free demo result. For a full version of this website, please go to  <a href="https://www6.waybackmachinedownloader.com/website-downloader-online/scrape-all-files/">Website Downloader</a></font></center>

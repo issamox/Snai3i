@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="Issam El hargal">
     <!-- Google fonts -->
     <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
@@ -35,6 +36,8 @@
     <link rel="stylesheet" href="{{ asset('css/eduschool-style.css') }}" media="all">
     <link rel="stylesheet" href="{{ asset('css/recent-posts-widget-with-thumbnails-public.css') }}" media="all">
     <link rel="stylesheet" href="{{ asset('css/css-tlpfoodmenu.css') }}" media="all">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    @yield('styles')
 
     <style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
 </head>

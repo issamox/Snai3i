@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -16,8 +17,9 @@ class ServiceFactory extends Factory
     {
         $title = $this->faker->name;
         return [
-            'name' => $title,
-            'slug' => Str::slug( $title )
+            'user_id'   => User::all()->random(),
+            'name'      => $title,
+            'slug'      => Str::slug( $title )
         ];
     }
 }

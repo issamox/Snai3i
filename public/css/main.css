@@ -1,0 +1,86 @@
+.front-signup .form-control{
+    width: 100%;
+    color: var(--heading-color);
+    background: var(--bg-grey);
+    font-size: 16px;
+    padding: 14px;
+    border: 2px solid var(--border-color-light);
+    outline: none;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+}
+.image-action {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid #f6f7fb;
+}
+.account-container form{
+    margin: 10px auto;
+    border: 1px solid var(--bs-gray);
+    padding: 5px;
+}
+.account-container .title {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--heading-color);
+    text-align: center;
+    font-weight: bold;
+    margin: 15px auto;
+}
+.account-container .description {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--heading-color);
+}
+.account-container .links {
+    margin: 10px auto;
+}
+.account-container .links li {
+    margin: 5px 2px;
+    border-bottom: 1px solid #DDD;
+    padding: 5px 10px;
+}
+.account-container .links li a {
+    font-weight: 500;
+    color: #fbb034;
+}
+.slick-prev:before, .slick-next:before{
+    color: #000;
+}
+.image-realisation-slider{
+    height: 250px;
+}
+
+/* Rating Artisan */
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+
+.rating > input{ display:none;}
+
+.rating > label {
+    position: relative;
+    width: 1em;
+    font-size: 2vw !important;
+    color: #FFD600 !important;
+    cursor: pointer;
+}
+.rating > label::before{
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+}
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+    opacity: 1 !important;
+}
+.rating > input:checked ~ label:before{
+    opacity:1;
+}
+.rating:hover > input:checked ~ label:before{ opacity: 0.4; }

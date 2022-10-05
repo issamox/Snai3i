@@ -54,9 +54,8 @@ class ServiceController extends Controller
 
     public function destroy (Service $service){
 
-
         $service->delete();
+        return response()->json(['success' => 'Suppression effectué avec succès']);
 
-        return redirect()->to(route('services.index'))->with('success','Supprission effectué avec succès');
     }
 }

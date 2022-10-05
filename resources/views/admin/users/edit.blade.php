@@ -40,6 +40,7 @@
 @endsection
 @section('scripts')
     <script src="https://demo.dashboardpack.com/adminty-html/files/bower_components/lightbox2/dist/js/lightbox.min.js"></script>
+    @include("admin.includes.session_msg")
     <script>
         $(document).on('click','.deleteRealisation',function(e){
             e.preventDefault();
@@ -67,6 +68,36 @@
                         },
                         success: function (){ $this.parent().parent().parent().hide(400);console.log($this)},
                         error : function (){ location.reload();}
+                    });
+                }
+            });
+        });
+        $(document).on('click','.deleteService i',function(e){
+            e.preventDefault();
+            let $this = $(this);
+            Swal.fire({
+                title:'êtes-vous sûr',
+                text: 'Voulez-vous vraiment supprimer ?',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'Non',
+                confirmButtonText: 'Oui'
+            }).then((result) => {
+                if (result.value) {
+                    var id = $(this).data("id");
+                    var token = $("meta[name='csrf-token']").attr("content");
+
+                    $.ajax({
+                        url: "/admin/services/"+id,
+                        type: 'DELETE',
+                        data: {
+                            "id": id,
+                            "_token": token,
+                        },
+                        success: function (){ $this.parent().parent().hide(400);console.log($this)},
+                        error :  function (){ location.reload();}
                     });
                 }
             });

@@ -20,15 +20,16 @@ class DatabaseSeeder extends Seeder
     {
         Job::factory(14)->create();
         City::factory(8)->create();
-        Service::factory(50)->create();
         User::factory(20)->create();
+        Service::factory(200)->create();
         Review::factory(100)->create();
+      //  Service::factory(200)->create();
 
-        $services = Service::all();
+        /*$services = Service::all();
         User::all()->each(function ($user) use ($services) {
             $user->services()->attach(
                 $services->random(rand(1, 15))->pluck('id')->toArray()
             );
-        });
+        });*/
     }
 }

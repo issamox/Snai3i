@@ -48,11 +48,11 @@ class User extends Authenticatable
     }
 
     public function services(){
-        return $this->belongsToMany(Service::class);
+        return $this->hasMany(Service::class);
     }
 
     public function reviews(){
-        return $this->hasMany(Review::class,'author_id');
+        return $this->hasMany(Review::class);
     }
     public function realisations(){
         return $this->hasMany(Realisation::class);

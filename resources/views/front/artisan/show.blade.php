@@ -42,13 +42,11 @@
                                                 </a>
                                             </div>
                                             <div class="author-right col-lg-9 col-md-8 position-relative align-self ps-xl-4 ps-lg-5">
-
                                                 <h4 class="mb-0"><a href="w3layouts.html" class="title-team-28">{{ $user->name }}</a></h4>
                                                 <p class="para-team my-0">{{ $user->description }}</p>
-
                                                 <div class="d-flex justify-content-between mt-4">
                                                     <span> {{ $user->type }} </span>
-                                                    <span> {{ $user->experience." ans d'expérience" }} </span>
+                                                    <span> {{ $user->experience." Ans d'expérience" }} </span>
                                                     <span>4.67 (3 avis) </span>
                                                 </div>
                                             </div>
@@ -60,23 +58,21 @@
                                             @forelse( $user->services as $service )
                                                <li><i class="fas fa-check-circle"></i> {{ $service->name }} </li>
                                             @empty
-                                                <li><i class="fas fa-check-circle"></i>  </li>
+                                                <div class="not-found">Aucun service trouve</div>
                                             @endforelse
                                         </ul>
                                     </div>
                                     <hr>
                                     <h3 class="text-center my-2 text-wh">Mes réalisations</h3>
                                     <div class="my-slider">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
-                                        <img src="{{ asset("images/images-testi".rand(1,3).".jpg") }}" class="arrow-png img-responsive mx-1">
+                                        @forelse( $user->realisations as $realisation )
+                                            <img src="{{ asset('/uploads/Admin/Realisations/'.$realisation->name) }}" class="arrow-png img-responsive image-realisation-slider mx-1">
+                                        @empty
+                                            <div class="not-found">Aucun image de realisation trouve</div>
+                                        @endforelse
                                     </div>
                                     <hr>
-                                    <h3 class="text-center my-2 text-bl">Avis reçus pour MBAREK Edlimi</h3>
+                                    <h3 class="text-center my-2 text-bl">Avis reçus pour {{ $user->name }}</h3>
                                      @foreach( $user->reviews as $review )
                                          <div class="row">
                                              <div class="col-sm-2">
@@ -86,10 +82,10 @@
                                              </div>
                                              <div class="col-sm-10">
                                                  <div>
-                                                     {{ $review->user->name }}
-                                                     <ul class="list-unstyled list-style-lis">
+                                                     {{ $review->author->name }}
+                                                     <ul class="list-unstyled mb-2 ps-0">
                                                          @for ($i = 1; $i <= $review->stars; $i++)
-                                                             <i class="fa fa-star"></i>
+                                                             <i class="fa fa-star checked" style="color:var(--primary-color);"></i>
                                                          @endfor
                                                      </ul>
                                                      {{ $review->content }}
@@ -102,17 +98,36 @@
                             </div>
 
                             <div class="w3PostComments">
-
                                 <div id="comments" class="comments-area">
-
                                     <div id="respond" class="comment-respond">
-                                        <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/eduschool/2021/11/11/knowledge-based-programs-from-children/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://wp.w3layouts.com/eduschool/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
-                                            <p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
-                                            <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
-                                            <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
-                                            <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="54" id="comment_post_ID">
-                                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
-                                            </p></form>	</div><!-- #respond -->
+                                        <h3 id="reply-title" class="comment-reply-title">Evaluer un artisan</h3>
+                                        <form action="{{ route('artisan.review') }}" method="post" id="commentform" class="comment-form">
+                                            @csrf
+                                            <p class="comment-notes"> Veuillez remplir tous les champs obligatoires <span class="required">*</span></p>
+                                            <p class="comment-form-comment">
+                                                <label for="comment">Commentaire (0 / 200)</label>
+                                                <textarea id="comment" name="comment" cols="40" rows="8" maxlength="200" required="required"></textarea>
+                                                @error('comment')
+                                                  <span class="messages"><p class="text-danger error">{{ $message }}</p></span>
+                                               @enderror
+                                            </p>
+                                            <label for="">Qualité de la prestation</label>
+                                            <div class="rating">
+                                                <input type="radio" name="stars" value="5" id="5"><label for="5">☆</label>
+                                                <input type="radio" name="stars" value="4" id="4"><label for="4">☆</label>
+                                                <input type="radio" name="stars" value="3" id="3"><label for="3">☆</label>
+                                                <input type="radio" name="stars" value="2" id="2"><label for="2">☆</label>
+                                                <input type="radio" name="stars" value="1" id="1"><label for="1">☆</label>
+                                            </div>
+                                            @error('stars')
+                                               <span class="messages"><p class="text-danger error">{{ $message }}</p></span>
+                                            @enderror
+                                            <p class="form-submit">
+                                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                                <input name="submit" type="submit" id="submit" class="submit" value="Soumettre">
+                                            </p>
+                                        </form>
+                                    </div><!-- #respond -->
 
                                 </div><!-- #comments -->
                             </div>

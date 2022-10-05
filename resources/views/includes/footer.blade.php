@@ -105,7 +105,7 @@
 <!-- //move top -->
 
 <!-- common jquery plugin -->
-<script src="{{asset('js/js-jquery-3.3.1.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('admin/files/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- //common jquery plugin -->
 
 <!-- /counter-->
@@ -160,38 +160,13 @@
 <!-- //bootstrap -->
 <!-- //Js scripts -->
 
-
+<script src="{{ asset('admin/files/assets/js/sweetalert2.min.js') }}"></script>
 <script src="{{ asset('js/js-navigation.js') }}" id="w3layouts-navigation-js"></script>
 <script src="{{ asset('js/js-wp-embed.min.js') }}" id="wp-embed-js"></script>
 <script src="{{ asset('js/slick.min.js') }}" id="wp-embed-js"></script>
-<script>
-    $('.my-slider').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
-                }
-            }
-        ]
-    });
-</script>
-
+@include("admin.includes.session_msg")
+<script src="{{ asset('js/main.js') }}"></script>
+@yield('scripts')
 </body>
 
 </html>
