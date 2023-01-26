@@ -24,14 +24,14 @@
                         <div class="form-group row align-items-center">
                             <div class="col-sm-12  mb-1">
                                 <label class="col-form-label" for="email">E-mail</label>
-                                <input name="email" id="email" type="email" class="form-control form-control-lg" value="{{ old('email') }}">
+                                <input name="email" id="email" type="email" class="form-control form-control-lg" value="{{ old('email') }}" autocomplete="off">
                                 @error('email')
                                 <span class="messages"><p class="text-danger error">{{ $message }}</p></span>
                                 @enderror
                             </div>
                             <div class="col-sm-12">
                                 <label class="col-form-label" for="password">Mot de passe</label>
-                                <input name="password" id="password" type="password" class="form-control form-control-lg" value="{{ old('password') }}">
+                                <input name="password" id="password" type="password" class="form-control form-control-lg" value="{{ old('password') }}" autocomplete="off">
                                 @error('password')
                                 <span class="messages"><p class="text-danger error">{{ $message }}</p></span>
                                 @enderror

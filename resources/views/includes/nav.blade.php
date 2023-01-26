@@ -1,7 +1,7 @@
 <div class="container w3HeaderLogoEd">
     <nav class="navbar navbar-expand-lg navbar-light">
         <h1>
-            <a class="navbar-brand" href="eduschool.html">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <i class="fas fa-graduation-cap"></i>Edu School
             </a>
         </h1>
