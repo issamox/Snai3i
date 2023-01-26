@@ -48,7 +48,6 @@ class UserController extends Controller
         $user->password           = Hash::make( $request->password );
         $user->password_decrypted =  $request->password;
         $user->description        = $request->description;
-        $user->role               = $request->role;
         $user->phone              = $request->phone;
         $user->experience         = $request->experience;
         $user->type               = $request->type;
@@ -115,7 +114,6 @@ class UserController extends Controller
         $user->password           = Hash::make( $request->password );
         $user->password_decrypted = $request->password;
         $user->description        = $request->description;
-        $user->role               = $request->role;
         $user->phone              = $request->phone;
         $user->experience         = $request->experience;
         $user->type               = $request->type;

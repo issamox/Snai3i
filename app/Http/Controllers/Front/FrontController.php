@@ -51,7 +51,6 @@ class FrontController extends Controller
         $user->password           = Hash::make( $request->password );
         $user->password_decrypted = $request->password;
         $user->description        = $request->description;
-        $user->role               = $request->role ? $request->role : 'Artisan';
         $user->phone              = $request->phone;
         $user->experience         = $request->experience;
         $user->type               = $request->type;
@@ -75,10 +74,10 @@ class FrontController extends Controller
 
             $credentials = $request->only('email', 'password');
             if (Auth::attempt($credentials)) {
-                if (Auth::user()->role == "Artisan"){
+                if (Auth::user()->type == "Artisan"){
                     return redirect()->to(route('front.account'))->with('success','Vous êtes connecté avec succès');
                 }
-                if (Auth::user()->role == "Admin"){
+                if (Auth::user()->type == "Admin"){
                     return redirect()->to(route('users.index'))->with('success','Vous êtes connecté avec succès');
                 }
             }
@@ -110,7 +109,6 @@ class FrontController extends Controller
         $user->password           = Hash::make( $request->password );
         $user->password_decrypted = $request->password;
         $user->description        = $request->description;
-        $user->role               = $request->role ? $request->role : 'Artisan';
         $user->phone              = $request->phone;
         $user->experience         = $request->experience;
         $user->type               = $request->type;
