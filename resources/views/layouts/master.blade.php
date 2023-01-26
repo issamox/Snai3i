@@ -32,6 +32,7 @@
             padding: 0 !important;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin/files/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/block-library-style.min.css') }}" media="all">
     <link rel="stylesheet" href="{{ asset('css/eduschool-style.css') }}" media="all">
     <link rel="stylesheet" href="{{ asset('css/recent-posts-widget-with-thumbnails-public.css') }}" media="all">
